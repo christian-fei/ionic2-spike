@@ -1,4 +1,4 @@
-import {Page} from 'ionic-angular';
+import {Page} from 'ionic-angular'
 
 
 @Page({
@@ -11,17 +11,11 @@ export class MainPage {
 
   getPosition() {
     const self = this
-    let options = {timeout: 10000, enableHighAccuracy: true};
+    const options = {timeout: 10000, enableHighAccuracy: true}
     navigator.geolocation.getCurrentPosition(
-      (position) => {
-        console.log('-- position.coords.latitude', position.coords.latitude)
-        console.log('-- position.coords.longitude', position.coords.longitude)
-        self.userPosition = position.coords
-      },
-      (error) => {
-        console.log(error);
-      },
+      (position) => self.userPosition = position.coords,
+      (error) => console.log(error),
       options
-    );
+    )
   }
 }
