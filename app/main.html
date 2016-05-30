@@ -4,7 +4,14 @@
       Your current position is:
     </ion-card-header>
     <ion-card-content>
-      <div>{{userPosition}}</div>
+      <div *ngIf="userPosition">
+        <div>
+          <label>latitude:</label> <span>{{userPosition.latitude}}</span>
+        </div>
+        <div>
+          <label>longitude:</label> <span>{{userPosition.longitude}}</span>
+        </div>
+      </div>
     </ion-card-content>
   </ion-card>
 </div>
